@@ -36,9 +36,15 @@ module.exports = {
 
   // Configurações de CORS
   cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:4200',
+    origin: [
+      'http://localhost:4200',
+      'https://barbearia-do-alem-ltda.github.io',
+      process.env.FRONTEND_URL
+    ].filter(Boolean),
     credentials: true,
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   },
 
   // Diretórios da aplicação

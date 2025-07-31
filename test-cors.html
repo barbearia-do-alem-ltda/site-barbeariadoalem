@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste CORS - Barbearia do Além</title>
+</head>
+<body>
+    <h1>Teste de CORS</h1>
+    <button onclick="testarAPI()">Testar API</button>
+    <div id="resultado"></div>
+
+    <script>
+        async function testarAPI() {
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = 'Testando...';
+            
+            try {
+                // Testar clientes
+                const responseClientes = await fetch('https://projetobarbeariadoalem-o-3.onrender.com/api/clientes');
+                const clientes = await responseClientes.json();
+                
+                // Testar serviços
+                const responseServicos = await fetch('https://projetobarbeariadoalem-o-3.onrender.com/api/servicos');
+                const servicos = await responseServicos.json();
+                
+                resultado.innerHTML = `
+                    <h3>✅ CORS funcionando!</h3>
+                    <p><strong>Clientes:</strong> ${clientes.length} encontrados</p>
+                    <p><strong>Serviços:</strong> ${servicos.length} encontrados</p>
+                    <pre>${JSON.stringify({clientes: clientes.slice(0,2), servicos: servicos.slice(0,2)}, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultado.innerHTML = `
+                    <h3>❌ Erro CORS:</h3>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
