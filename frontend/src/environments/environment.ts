@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/api'
+  apiUrl: 'https://projetobarbeariadoalem-o-3.onrender.com/api'
 };

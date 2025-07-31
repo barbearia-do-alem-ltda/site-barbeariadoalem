@@ -1,7 +1,7 @@
 // Configurações do ambiente - Barbearia do Além
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://projetobarbeariadoalem-o-3.onrender.com/api',
   
   // Configurações padrão do sistema
   defaultCredentials: {
@@ -11,7 +11,7 @@ export const environment = {
   
   // URLs importantes
   urls: {
-    backend: 'http://localhost:3000',
+    backend: 'https://projetobarbeariadoalem-o-3.onrender.com',
     frontend: 'http://localhost:4200',
     login: 'http://localhost:4200/login',
     admin: 'http://localhost:4200/admin'

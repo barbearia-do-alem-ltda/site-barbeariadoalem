@@ -11,6 +11,39 @@
   z-index: 100;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
 }
+
+/* Adiciona espaço no final do main para o rodapé fixo */
+main {
+  padding-bottom: 80px; /* Espaço para o rodapé fixo */
+}
+
+/* Media queries para o app component */
+@media (max-width: 768px) {
+  .footer-barbearia {
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+  }
+  
+  main {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-barbearia {
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .footer-barbearia p {
+    margin: 0;
+    line-height: 1.3;
+  }
+  
+  main {
+    padding-bottom: 60px;
+  }
+}
 /* ==============================
    ESTILOS DO COMPONENTE PRINCIPAL
    ============================== */

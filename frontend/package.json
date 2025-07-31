@@ -9,7 +9,9 @@
     "build": "ng build --configuration=production",
     "vercel-build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng deploy --base-href=/site-barbeariadoalem/",
+    "build:gh-pages": "ng build --configuration=production --base-href=/site-barbeariadoalem/"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +32,7 @@
     "@angular/cli": "^19.2.6",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
+    "angular-cli-ghpages": "^2.0.3",
     "concurrently": "^8.2.2",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",

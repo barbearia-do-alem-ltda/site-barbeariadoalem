@@ -27,7 +27,9 @@
     "security:update": "cd backend && npm run generate-credentials",
     "security:check": "npm audit && cd frontend && npm audit && cd ../backend && npm audit",
     "setup:db": "cd backend && npm run setup-neon",
-    "init:data": "cd backend && npm run init-data"
+    "init:data": "cd backend && npm run init-data",
+    "deploy": "npm run build:gh-pages && cd frontend && npm run deploy",
+    "build:gh-pages": "cd frontend && npm run build:gh-pages"
   },
   "keywords": [
     "barbearia",
@@ -40,6 +42,7 @@
   "author": "Barbearia do Além",
   "license": "MIT",
   "devDependencies": {
+    "angular-cli-ghpages": "^2.0.3",
     "concurrently": "^8.2.2",
     "rimraf": "^5.0.5"
   },

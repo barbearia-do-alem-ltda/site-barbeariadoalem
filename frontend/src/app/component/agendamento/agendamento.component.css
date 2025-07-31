@@ -604,6 +604,28 @@ button:hover::before {
 }
 
 @media (max-width: 768px) {
+  .agendamento-container {
+    padding: 20px 15px;
+  }
+  
+  .agendamento-header .agendamento-h1,
+  .agendamento-header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .agendamento-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .agendamento-form {
+    padding: 20px 15px;
+  }
+  
+  .form-section {
+    padding: 20px 15px;
+  }
+  
   .date-time-group {
     flex-direction: column;
     gap: 15px;
@@ -616,6 +638,8 @@ button:hover::before {
   
   button {
     width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
   }
   
   .agendamento-item {
@@ -626,5 +650,129 @@ button:hover::before {
   
   .agendamento-item .horario {
     min-width: auto;
+  }
+  
+  .tabela-depoimentos-agendamento {
+    min-width: 300px;
+  }
+  
+  .tabela-depoimentos-agendamento th,
+  .tabela-depoimentos-agendamento td {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .tabela-cortes {
+    min-width: 300px;
+  }
+  
+  .tabela-cortes th,
+  .tabela-cortes td {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .agendamento-container {
+    padding: 15px 10px;
+  }
+  
+  .agendamento-header .agendamento-h1,
+  .agendamento-header h1 {
+    font-size: 2.4rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+  }
+  
+  .agendamento-subtitle {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .agendamento-form {
+    padding: 18px 12px;
+  }
+  
+  .form-section {
+    padding: 18px 12px;
+    margin-bottom: 20px;
+  }
+  
+  .section-icon {
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+    top: -12px;
+    right: 15px;
+  }
+  
+  label {
+    font-size: 1rem;
+  }
+  
+  input, select, textarea {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+  
+  .tabela-depoimentos-agendamento {
+    min-width: 280px;
+  }
+  
+  .tabela-depoimentos-agendamento th {
+    font-size: 1rem;
+    padding: 12px 8px;
+  }
+  
+  .tabela-depoimentos-agendamento td {
+    padding: 15px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .tabela-depoimentos-agendamento .btn-agendar {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    width: 100%;
+  }
+  
+  .tabela-cortes {
+    min-width: 280px;
+  }
+  
+  .tabela-cortes th,
+  .tabela-cortes td {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .agendamento-container {
+    padding: 12px 8px;
+  }
+  
+  .agendamento-header .agendamento-h1,
+  .agendamento-header h1 {
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .agendamento-form {
+    padding: 15px 10px;
+  }
+  
+  .form-section {
+    padding: 15px 10px;
+  }
+  
+  input, select, textarea {
+    padding: 8px 10px;
+  }
+  
+  .tabela-cortes th,
+  .tabela-cortes td {
+    padding: 8px 4px;
+    font-size: 0.75rem;
   }
 }

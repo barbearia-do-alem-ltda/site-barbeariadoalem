@@ -101,7 +101,7 @@
   border: 3px solid #d4af37;
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(212, 175, 55, 0.12);
-  padding: 48px 0;
+  padding: 48px 20px;
   margin-bottom: 48px;
 }
 
@@ -222,12 +222,14 @@
     display: flex;
     justify-content: center;
     margin: 24px 0 48px 0;
-    padding: 0 20px;
+    padding: 0 10px;
+    overflow-x: auto; /* Scroll horizontal em mobile */
 }
 
 .tabela-cortes {
     width: 100%;
     max-width: 900px;
+    min-width: 300px; /* Largura mínima */
     border-collapse: collapse;
     background: #181818;
     color: #eee;
@@ -292,12 +294,14 @@
     display: flex;
     justify-content: center;
     margin: 24px 0 48px 0;
-    padding: 0 20px;
+    padding: 0 10px;
+    overflow-x: auto; /* Scroll horizontal em mobile */
 }
 
 .tabela-depoimentos-agendamento {
     width: 100%;
     max-width: 900px;
+    min-width: 300px; /* Largura mínima */
     border-collapse: collapse;
     background: #181818;
     color: #eee;
@@ -687,6 +691,15 @@
 
 /* Para tablets */
 @media (max-width: 768px) {
+    .apresentacao-barbearia {
+        padding: 40px 15px 30px 15px;
+    }
+    
+    .imagem-apresentacao {
+        width: 200px;
+        height: 200px;
+    }
+    
     .galeria-cortes {
         gap: 20px;
         padding: 15px;
@@ -700,22 +713,79 @@
     .home-cortes-titulo-alem {
         font-size: 2.1rem;
         margin: 25px 0;
+        padding: 15px 10px;
     }
     
     .home-servicos-titulo {
         font-size: 2.6rem;
+        margin: 50px 0 30px 0;
     }
     
     .home-bemvindo-titulo {
         font-size: 2.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .servicos-destaque {
+        gap: 30px;
+        padding: 30px 15px;
+    }
+    
+    .servico-card {
+        width: 220px;
+        padding: 20px 15px 15px 15px;
+    }
+    
+    .servico-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .tabela-cortes th, .tabela-cortes td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+    
+    .tabela-depoimentos-agendamento th, .tabela-depoimentos-agendamento td {
+        padding: 18px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .texto-container {
+        padding: 20px 20px;
+        margin: 0 10px;
+    }
+    
+    .slogan-principal {
+        font-size: 1.9rem !important;
+    }
+    
+    .descricao-servico {
+        font-size: 1.3rem;
+    }
+    
+    .efeito-sangue {
+        font-size: 1.7rem;
+        padding: 12px 15px;
     }
 }
 
 /* Para smartphones */
 @media (max-width: 480px) {
+    .apresentacao-barbearia {
+        padding: 30px 10px 20px 10px;
+    }
+    
+    .imagem-apresentacao {
+        width: 180px;
+        height: 180px;
+    }
+    
     .galeria-cortes {
         gap: 15px;
         padding: 10px;
+        flex-direction: column;
+        align-items: center;
     }
     
     .galeria-img {
@@ -724,23 +794,122 @@
     }
     
     .home-cortes-titulo-alem {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
         margin: 20px 0;
-        padding: 12px 0;
+        padding: 12px 8px;
+        max-width: 95%;
     }
     
     .home-servicos-titulo {
         font-size: 2.2rem;
-        margin: 50px 0 30px 0;
+        margin: 40px 0 25px 0;
+        padding: 0 10px;
     }
     
     .home-bemvindo-titulo {
         font-size: 2rem;
+        margin-bottom: 18px;
+        padding: 0 10px;
     }
     
-    .home-bemvindo-titulo-estiloso {
-        font-size: 2.1rem;
-        padding: 15px 0 12px 0;
+    .home-depoimentos-titulo {
+        font-size: 1.9rem;
+        margin: 35px 0 25px 0;
+        padding: 15px 8px;
+        max-width: 95%;
+    }
+    
+    .servicos-destaque {
+        gap: 20px;
+        padding: 25px 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .servico-card {
+        width: 90%;
+        max-width: 280px;
+        padding: 18px 12px 12px 12px;
+    }
+    
+    .servico-img {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .servico-card h3 {
+        font-size: 1.3rem;
+        white-space: normal;
+        text-align: center;
+    }
+    
+    .tabela-cortes {
+        min-width: 280px;
+    }
+    
+    .tabela-cortes th, .tabela-cortes td {
+        padding: 10px 6px;
+        font-size: 0.85rem;
+    }
+    
+    .tabela-depoimentos-agendamento {
+        min-width: 280px;
+    }
+    
+    .tabela-depoimentos-agendamento th {
+        font-size: 1rem;
+        padding: 15px 10px;
+    }
+    
+    .tabela-depoimentos-agendamento td {
+        padding: 20px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .tabela-depoimentos-agendamento .btn-agendar {
+        font-size: 1rem;
+        padding: 10px 20px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .texto-container {
+        padding: 18px 15px;
+        margin: 0 5px;
+    }
+    
+    .slogan-principal {
+        font-size: 1.7rem !important;
+        margin-bottom: 20px;
+    }
+    
+    .descricao-servico {
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+    }
+    
+    .efeito-sangue {
+        font-size: 1.5rem;
+        padding: 10px 12px;
+        margin: 25px 0 15px 0;
+    }
+    
+    .apresentacao-destaque {
+        font-size: 1.1rem;
+        padding: 12px 15px;
+        margin: 15px 5px;
+        max-width: 95%;
+    }
+    
+    .home-banner {
+        margin: 0 10px 30px 10px;
+        border-radius: 12px;
+    }
+    
+    .home-apresentacao {
+        margin: 30px 10px;
+        padding: 20px 15px;
+        border-radius: 15px;
     }
 }
 
@@ -863,5 +1032,56 @@
   @keyframes fantasmaDireitaHome {
     0%, 100% { right: 0; }
     50% { right: 25%; }
+  }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 320px) {
+  .home-bemvindo-titulo {
+    font-size: 1.8rem;
+    padding: 0 5px;
+  }
+  
+  .home-servicos-titulo {
+    font-size: 2rem;
+    padding: 0 5px;
+  }
+  
+  .home-cortes-titulo-alem {
+    font-size: 1.6rem;
+    padding: 10px 5px;
+  }
+  
+  .servico-card {
+    width: 95%;
+    padding: 15px 8px;
+  }
+  
+  .servico-img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .tabela-cortes th, .tabela-cortes td {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+  }
+  
+  .texto-container {
+    padding: 15px 10px;
+    margin: 0;
+  }
+  
+  .slogan-principal {
+    font-size: 1.5rem !important;
+  }
+  
+  .descricao-servico {
+    font-size: 1.1rem;
+  }
+  
+  .efeito-sangue {
+    font-size: 1.3rem;
+    padding: 8px 10px;
   }
 }
