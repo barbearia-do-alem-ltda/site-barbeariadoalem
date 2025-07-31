@@ -7,6 +7,7 @@ import { ContatoComponent } from './component/contato/contato.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { LoginComponent } from './component/login/login.component';
 import { NaoEncontradosComponent } from './component/nao-encontrados/nao-encontrados.component';
+import { TestConnectionComponent } from './component/test-connection/test-connection.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -17,5 +18,6 @@ export const routes: Routes = [
     {path:'agendamento', component: AgendamentoComponent},//rota do componente agendamento
     {path:'contato', component: ContatoComponent},   //rota do componente contatos
     {path:'admin', component: AdminComponent, canActivate: [AuthGuard]},      //rota do componente admin (protegida)
+    {path:'test-connection', component: TestConnectionComponent}, //rota para teste de conexão
     {path:'**', component: NaoEncontradosComponent},//rota para redirecionar paginas nao encontrada
 ];

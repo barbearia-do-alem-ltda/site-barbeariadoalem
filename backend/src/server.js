@@ -14,6 +14,12 @@ const db = require('./database');
 
 const app = express();
 
+// Middleware de debug para CORS
+app.use((req, res, next) => {
+  console.log(`🔗 ${req.method} ${req.url} - Origin: ${req.headers.origin || 'N/A'}`);
+  next();
+});
+
 // Configurar CORS usando configurações centralizadas
 app.use(cors(config.cors));
 
