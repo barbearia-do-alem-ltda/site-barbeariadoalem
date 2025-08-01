@@ -12,9 +12,9 @@ export const environment = {
   // URLs importantes
   urls: {
     backend: 'https://projetobarbeariadoalem-o-3.onrender.com',
-    frontend: 'http://localhost:4200',
-    login: 'http://localhost:4200/login',
-    admin: 'http://localhost:4200/admin'
+    frontend: 'https://barbearia-do-alem-ltda.github.io/site-barbeariadoalem',
+    login: 'https://barbearia-do-alem-ltda.github.io/site-barbeariadoalem/login',
+    admin: 'https://barbearia-do-alem-ltda.github.io/site-barbeariadoalem/admin'
   },
   
   // Configurações de banco
@@ -28,6 +28,6 @@ export const environment = {
     step1: 'Execute: setup-projeto.bat',
     step2: 'Se erro de banco, edite backend/.env',
     step3: 'Execute: start-completo.bat',
-    step4: 'Acesse: http://localhost:4200/login'
+    step4: 'Acesse: https://barbearia-do-alem-ltda.github.io/site-barbeariadoalem/login'
   }
 };
