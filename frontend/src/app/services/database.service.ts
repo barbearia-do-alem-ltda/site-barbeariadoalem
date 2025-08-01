@@ -78,13 +78,7 @@ export class DatabaseService {
 
   // Clientes (rota pública para leitura)
   getClientes(): Observable<Cliente[]> {
-    const timestamp = new Date().getTime();
-    const headers = new HttpHeaders({
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    });
-    return this.http.get<Cliente[]>(`${this.apiUrl}/clientes?_t=${timestamp}`, { headers });
+    return this.http.get<Cliente[]>(`${this.apiUrl}/clientes`);
   }
   
   // Verificar duplicatas de cliente
