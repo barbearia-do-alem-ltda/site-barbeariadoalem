@@ -59,3 +59,29 @@ h1 {
     max-width: 1000px; /* Largura máxima menor que main */
     margin: 0 auto; /* Centraliza horizontalmente */
 }
+
+/* CSS global para responsividade */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Previne overflow horizontal */
+.container, .home-container, .apresentacao-barbearia {
+    max-width: 100%;
+    overflow-x: hidden;
+}
