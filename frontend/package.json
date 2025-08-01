@@ -9,9 +9,7 @@
     "build": "ng build --configuration=production",
     "vercel-build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "deploy": "ng deploy --base-href=/site-barbeariadoalem/",
-    "build:gh-pages": "ng build --configuration=production --base-href=/site-barbeariadoalem/"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
