@@ -53,8 +53,8 @@ async function updateAdminPassword() {
       
       // Registrar log de segurança
       await client.query(
-        `INSERT INTO logs_login (admin_id, ip, user_agent, sucesso, tentativa_em, observacoes)
-         VALUES ($1, '127.0.0.1', 'Sistema-Atualizacao-Senha', true, CURRENT_TIMESTAMP, 'Senha atualizada por script de segurança')`,
+        `INSERT INTO logs_login (admin_id, ip_address, user_agent, sucesso, tentativa_em)
+         VALUES ($1, '127.0.0.1', 'Sistema-Atualizacao-Senha', true, CURRENT_TIMESTAMP)`,
         [result.rows[0].id]
       );
       
