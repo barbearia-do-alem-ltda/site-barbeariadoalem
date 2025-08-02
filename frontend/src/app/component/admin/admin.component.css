@@ -1465,24 +1465,55 @@ button:disabled {
     padding-left: 0;
   }
 }
-/* Adicionar estilos para gerenciar admins */
-.gerenciar-admins-container {
-  margin-bottom: 20px;
-  text-align: center;
+/* Seção administrativa profissional */
+.admin-management-section {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
 }
 
-.btn-gerenciar-admins {
-  background: #d4af37;
+.admin-management-section h2 {
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.admin-tools {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-admin-tool {
+  background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
   color: #000;
   border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
-.btn-gerenciar-admins:hover {
-  background: #b8941f;
+.btn-admin-tool:hover {
+  background: linear-gradient(135deg, #b8941f 0%, #d4af37 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.tool-icon {
+  font-size: 16px;
+}
+
+.tool-text {
+  font-size: 14px;
 }

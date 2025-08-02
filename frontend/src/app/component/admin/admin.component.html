@@ -69,12 +69,6 @@
             <button type="submit" [disabled]="bloqueioForm.invalid">Bloquear Data</button>
           </form>
           
-          <div class="gerenciar-admins-container">
-            <button (click)="mostrarGerenciarAdmins = !mostrarGerenciarAdmins" class="btn-gerenciar-admins">
-              {{ mostrarGerenciarAdmins ? '❌ Cancelar' : '🔐 Gerenciar Administradores' }}
-            </button>
-          </div>
-          
           <div class="datas-bloqueadas" *ngIf="datasBloqueadas.length > 0">
             <h3>Datas Bloqueadas</h3>
             <div class="datas-bloqueadas-lista">
@@ -265,6 +259,17 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+    
+    <!-- Seção Administrativa -->
+    <div class="admin-section admin-management-section">
+      <h2>🔧 Administração do Sistema</h2>
+      <div class="admin-tools">
+        <button (click)="mostrarGerenciarAdmins = !mostrarGerenciarAdmins" class="btn-admin-tool">
+          <span class="tool-icon">🔐</span>
+          <span class="tool-text">{{ mostrarGerenciarAdmins ? 'Ocultar Gerenciamento' : 'Gerenciar Administradores' }}</span>
+        </button>
       </div>
     </div>
     
