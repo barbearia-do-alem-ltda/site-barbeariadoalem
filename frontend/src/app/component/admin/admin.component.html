@@ -262,17 +262,6 @@
       </div>
     </div>
     
-    <!-- Seção Administrativa -->
-    <div class="admin-section admin-management-section">
-      <h2>🔧 Administração do Sistema</h2>
-      <div class="admin-tools">
-        <button (click)="mostrarGerenciarAdmins = !mostrarGerenciarAdmins" class="btn-admin-tool">
-          <span class="tool-icon">🔐</span>
-          <span class="tool-text">{{ mostrarGerenciarAdmins ? 'Ocultar Gerenciamento' : 'Gerenciar Administradores' }}</span>
-        </button>
-      </div>
-    </div>
-    
     <div class="admin-section">
       <h2>Status dos Agendamentos</h2>
       <div class="status-counters">
@@ -427,6 +416,17 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    
+    <!-- Seção Administrativa -->
+    <div class="admin-section admin-management-section">
+      <h2>🔧 Administração do Sistema</h2>
+      <div class="admin-tools">
+        <button (click)="mostrarGerenciarAdmins = !mostrarGerenciarAdmins" class="btn-admin-tool">
+          <span class="tool-icon">🔐</span>
+          <span class="tool-text">{{ mostrarGerenciarAdmins ? 'Ocultar Gerenciamento' : 'Gerenciar Administradores' }}</span>
+        </button>
       </div>
     </div>
     
