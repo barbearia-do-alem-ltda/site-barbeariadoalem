@@ -840,6 +840,116 @@ app.get('/api/logs-agendamentos', async (req, res) => {
   }
 });
 
+// GET para listar administradores (PROTEGIDA - APENAS ADMIN)
+app.get('/api/admins', verificarAuth, async (req, res) => {
+  try {
+    const result = await db.query(`
+      SELECT id, nome, email, nivel_acesso, ativo, ultimo_login, criado_em
+      FROM administradores 
+      ORDER BY nome
+    `);
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Erro ao buscar administradores:', err);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+// POST para criar novo administrador (PROTEGIDA - APENAS ADMIN)
+app.post('/api/admins', verificarAuth, async (req, res) => {
+  const { nome, email, nivel_acesso } = req.body;
+  const senha = 'admin123'; // Senha padrão
+  
+  if (!nome || !email || !nivel_acesso) {
+    return res.status(400).json({ error: 'Nome, email e nível de acesso são obrigatórios' });
+  }
+  
+  try {
+    // Verificar se email já existe
+    const emailExiste = await db.query(
+      'SELECT id FROM administradores WHERE email = $1',
+      [email]
+    );
+    
+    if (emailExiste.rows.length > 0) {
+      return res.status(400).json({ error: 'Email já está em uso' });
+    }
+    
+    // Hash da senha
+    const senhaHash = await bcrypt.hash(senha, 12);
+    
+    // Criar administrador
+    const result = await db.query(
+      `INSERT INTO administradores (nome, email, senha_hash, nivel_acesso, ativo) 
+       VALUES ($1, $2, $3, $4, true) 
+       RETURNING id, nome, email, nivel_acesso, ativo, criado_em`,
+      [nome, email, senhaHash, nivel_acesso]
+    );
+    
+    res.status(201).json({
+      admin: result.rows[0],
+      senhaTemporaria: senha
+    });
+  } catch (err) {
+    console.error('Erro ao criar administrador:', err);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+// PUT para alterar senha do administrador (PROTEGIDA - APENAS ADMIN)
+app.put('/api/admins/:id/senha', verificarAuth, async (req, res) => {
+  const { id } = req.params;
+  const { senhaAtual, novaSenha } = req.body;
+  
+  if (!senhaAtual || !novaSenha) {
+    return res.status(400).json({ error: 'Senha atual e nova senha são obrigatórias' });
+  }
+  
+  if (novaSenha.length < 6) {
+    return res.status(400).json({ error: 'Nova senha deve ter pelo menos 6 caracteres' });
+  }
+  
+  try {
+    // Buscar administrador
+    const adminResult = await db.query(
+      'SELECT * FROM administradores WHERE id = $1',
+      [id]
+    );
+    
+    if (adminResult.rows.length === 0) {
+      return res.status(404).json({ error: 'Administrador não encontrado' });
+    }
+    
+    const admin = adminResult.rows[0];
+    
+    // Verificar senha atual
+    const senhaValida = await bcrypt.compare(senhaAtual, admin.senha_hash);
+    if (!senhaValida) {
+      return res.status(400).json({ error: 'Senha atual incorreta' });
+    }
+    
+    // Hash da nova senha
+    const novaSenhaHash = await bcrypt.hash(novaSenha, 12);
+    
+    // Atualizar senha
+    await db.query(
+      'UPDATE administradores SET senha_hash = $1, alterado_em = CURRENT_TIMESTAMP WHERE id = $2',
+      [novaSenhaHash, id]
+    );
+    
+    // Log da alteração
+    await db.query(
+      'INSERT INTO logs_login (admin_id, ip_address, user_agent, sucesso, tentativa_em) VALUES ($1, $2, $3, true, CURRENT_TIMESTAMP)',
+      [id, req.ip, 'Alteração de senha']
+    );
+    
+    res.json({ success: true, message: 'Senha alterada com sucesso' });
+  } catch (err) {
+    console.error('Erro ao alterar senha:', err);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
 // PATCH para atualizar status do agendamento (PROTEGIDA - APENAS ADMIN)
 app.patch('/api/agendamentos/:id', verificarAuth, async (req, res) => {
   const { id } = req.params;

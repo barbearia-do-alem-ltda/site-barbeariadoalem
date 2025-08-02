@@ -179,4 +179,31 @@ export class AuthService {
   get currentAdmin(): Admin | null {
     return this.currentAdminSubject.value;
   }
+
+  // Listar administradores
+  async listarAdmins(): Promise<any[]> {
+    const response = await this.http.get<any[]>(`${this.apiUrl}/admins`, {
+      headers: this.getAuthHeaders()
+    }).toPromise();
+    return response || [];
+  }
+
+  // Criar novo administrador
+  async criarAdmin(admin: {nome: string, email: string, nivel_acesso: string}): Promise<any> {
+    const response = await this.http.post<any>(`${this.apiUrl}/admins`, admin, {
+      headers: this.getAuthHeaders()
+    }).toPromise();
+    return response;
+  }
+
+  // Alterar senha do administrador
+  async alterarSenhaAdmin(id: number, senhaAtual: string, novaSenha: string): Promise<any> {
+    const response = await this.http.put<any>(`${this.apiUrl}/admins/${id}/senha`, {
+      senhaAtual,
+      novaSenha
+    }, {
+      headers: this.getAuthHeaders()
+    }).toPromise();
+    return response;
+  }
 }

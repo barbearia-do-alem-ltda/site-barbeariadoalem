@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } 
 import { Router } from '@angular/router';
 import { DatabaseService, Agendamento, Servico, Cliente, DataBloqueada, LogAgendamento } from '../../services/database.service';
 import { AuthService } from '../../services/auth.service';
+import { GerenciarAdminsComponent } from '../gerenciar-admins/gerenciar-admins.component';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, GerenciarAdminsComponent],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
@@ -26,6 +27,7 @@ export class AdminComponent implements OnInit {
   dataHoje: string;
   filtroAtual: string = 'pendentes';
   mostrarClientes = false;
+  mostrarGerenciarAdmins = false;
   
   // Contadores de agendamentos por status
   contadorPendentes = 0;
