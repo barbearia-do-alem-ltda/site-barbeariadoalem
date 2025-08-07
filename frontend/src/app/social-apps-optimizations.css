@@ -487,28 +487,40 @@
   
   .contato-table td {
     display: table-cell !important;
-    padding: 12px 8px !important;
+    padding: 8px 6px !important;
     font-size: 0.75rem !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     vertical-align: middle !important;
     line-height: 1.4 !important;
-    text-align: left !important;
+    text-align: center !important;
     height: 40px !important;
     border-bottom: 1px solid #333 !important;
   }
   
-  .contato-table td:first-child {
-    width: 45% !important;
-    font-weight: 600 !important;
-    text-align: left !important;
-    padding-left: 10px !important;
+  .contato-table td:nth-child(1),
+  .contato-table td:nth-child(3) {
+    width: 10% !important;
+    text-align: center !important;
+    padding: 8px 4px !important;
   }
   
-  .contato-table td:last-child {
-    width: 55% !important;
+  .contato-table td:nth-child(2),
+  .contato-table td:nth-child(4) {
+    width: 40% !important;
     text-align: left !important;
-    padding-left: 10px !important;
+    padding-left: 8px !important;
+  }
+  
+  .contato-label {
+    font-weight: 600 !important;
+    font-size: 0.7rem !important;
+    margin-bottom: 2px !important;
+  }
+  
+  .contato-value {
+    font-size: 0.75rem !important;
+    color: #eee !important;
   }
   
   .contato-table th {
