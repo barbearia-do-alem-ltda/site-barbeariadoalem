@@ -67,7 +67,7 @@ body {
 
 /* Fantasma da direita - Posicionamento e delay de animação */
 .ghost-right {
-    right: 52px; /* 20px da borda direita */
+    right: 52px; /* da borda direita */
     animation-delay: 1.5s; /* Delay para criar movimento dessincronizado */
 }
 
