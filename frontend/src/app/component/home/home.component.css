@@ -312,55 +312,66 @@
     padding: 12px 10px;
 }
 
-/* Seção de Depoimentos & Agendamento - Tabela estilo Excel */
+/* Seção de Depoimentos & Agendamento - Otimizada para Facebook */
 .depoimentos-agendamento-tabela-wrapper {
-    display: flex;
-    justify-content: center;
+    display: block;
     margin: 24px 0 48px 0;
-    padding: 0 10px;
-    overflow-x: auto; /* Scroll horizontal em mobile */
+    padding: 0 5px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .tabela-depoimentos-agendamento {
     width: 100%;
-    max-width: 900px;
-    min-width: 300px; /* Largura mínima */
-    border-collapse: collapse;
+    min-width: 600px;
+    border-collapse: separate;
+    border-spacing: 0;
     background: #181818;
     color: #eee;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     margin: 0 auto;
     font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    overflow: hidden;
     border: 2px solid #d4af37;
+    table-layout: fixed;
 }
 
 .tabela-depoimentos-agendamento th, .tabela-depoimentos-agendamento td {
-    padding: 24px 20px;
+    padding: 20px 15px;
     border: 1px solid #333;
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.95rem;
     vertical-align: top;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .tabela-depoimentos-agendamento th {
     background: linear-gradient(90deg, #d4af37 0%, #b30000 100%);
     color: #181818;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: none;
     border-color: #d4af37;
     text-align: center;
+    white-space: nowrap;
+}
+
+.tabela-depoimentos-agendamento th:nth-child(1) {
+    width: 50%;
+}
+
+.tabela-depoimentos-agendamento th:nth-child(2) {
+    width: 50%;
 }
 
 .tabela-depoimentos-agendamento td {
     background: #222;
     color: #eee;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5;
-    padding: 30px 25px;
+    white-space: normal;
 }
 
 .tabela-depoimentos-agendamento tr:hover td {
@@ -372,16 +383,16 @@
 .tabela-depoimentos-agendamento td:nth-child(1) {
     font-style: italic;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border-right: 2px solid #d4af37;
-    width: 50%;
+    padding: 20px 15px;
 }
 
 /* Segunda coluna - Agendamento */
 .tabela-depoimentos-agendamento td:nth-child(2) {
     text-align: center;
     color: #eee;
-    width: 50%;
+    padding: 20px 15px;
 }
 
 /* Botão de agendamento dentro da tabela */
@@ -390,14 +401,18 @@
     background: linear-gradient(90deg, #d4af37 60%, #b30000 100%);
     color: #181818;
     font-weight: bold;
-    font-size: 1.1rem;
-    padding: 12px 24px;
+    font-size: 1rem;
+    padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
     box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
     margin-top: 12px;
     transition: background 0.3s, color 0.3s, transform 0.2s;
     border: 2px solid #d4af37;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tabela-depoimentos-agendamento .btn-agendar:hover {
@@ -817,18 +832,39 @@
         line-height: 1.4;
     }
     
+    .depoimentos-agendamento-tabela-wrapper {
+        padding: 0 2px;
+        margin: 20px 0 40px 0;
+    }
+    
     .tabela-depoimentos-agendamento {
-        min-width: 500px;
+        min-width: 550px;
+        table-layout: fixed;
     }
     
     .tabela-depoimentos-agendamento th, .tabela-depoimentos-agendamento td {
-        padding: 15px 12px;
+        padding: 12px 8px;
+        font-size: 0.85rem;
+        word-wrap: break-word;
+    }
+    
+    .tabela-depoimentos-agendamento th {
+        font-size: 1rem;
+    }
+    
+    .tabela-depoimentos-agendamento td:nth-child(1) {
         font-size: 0.9rem;
+        padding: 12px 10px;
+    }
+    
+    .tabela-depoimentos-agendamento td:nth-child(2) {
+        padding: 12px 8px;
     }
     
     .tabela-depoimentos-agendamento .btn-agendar {
-        font-size: 1rem;
-        padding: 10px 20px;
+        font-size: 0.95rem;
+        padding: 10px 16px;
+        min-height: 44px;
     }
     
     .texto-container {
@@ -995,30 +1031,50 @@
         font-size: 0.7rem;
     }
     
+    .depoimentos-agendamento-tabela-wrapper {
+        padding: 0 1px;
+        margin: 15px 0 30px 0;
+    }
+    
     .tabela-depoimentos-agendamento {
-        min-width: 320px;
+        min-width: 450px;
         border-radius: 8px;
+        table-layout: fixed;
     }
     
     .tabela-depoimentos-agendamento th {
-        font-size: 0.95rem;
-        padding: 12px 8px;
+        font-size: 0.9rem;
+        padding: 10px 6px;
         line-height: 1.2;
     }
     
     .tabela-depoimentos-agendamento td {
-        padding: 16px 10px;
-        font-size: 0.85rem;
+        padding: 12px 8px;
+        font-size: 0.8rem;
         line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .tabela-depoimentos-agendamento td:nth-child(1) {
+        font-size: 0.8rem;
+        padding: 12px 8px;
+    }
+    
+    .tabela-depoimentos-agendamento td:nth-child(2) {
+        padding: 12px 6px;
     }
     
     .tabela-depoimentos-agendamento .btn-agendar {
-        font-size: 0.95rem;
-        padding: 12px 16px;
+        font-size: 0.85rem;
+        padding: 10px 12px;
         width: 100%;
         margin-top: 8px;
         border-radius: 6px;
         min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .texto-container {
