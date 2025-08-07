@@ -475,24 +475,32 @@
   }
   
   .contato-table td {
-    padding: 8px 6px !important;
+    padding: 10px 8px !important;
     font-size: 0.75rem !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     vertical-align: middle !important;
-    line-height: 1.4 !important;
-    text-align: center !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
   }
   
   .contato-table td:first-child {
-    width: 35% !important;
+    width: 40% !important;
     font-weight: 600 !important;
-    text-align: center !important;
+    text-align: left !important;
+    padding-left: 12px !important;
   }
   
   .contato-table td:last-child {
-    width: 65% !important;
+    width: 60% !important;
+    text-align: left !important;
+    padding-left: 8px !important;
+  }
+  
+  .contato-table th {
     text-align: center !important;
+    padding: 8px !important;
+    font-size: 0.8rem !important;
   }
   
   .contato-horario-pagamento {
