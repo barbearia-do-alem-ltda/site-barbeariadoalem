@@ -197,35 +197,45 @@ textarea {
     transform: scale(1.05);
 }
 
-/* Estilos para contato */
+/* Estilos para contato - Otimizada para Facebook */
+.contato-info {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .contato-table {
     width: 100%;
-    border-collapse: collapse;
+    min-width: 500px;
+    border-collapse: separate;
+    border-spacing: 0;
     background: rgba(24, 24, 24, 0.9);
     border-radius: 15px;
-    overflow: hidden;
     box-shadow: 0 4px 20px rgba(179, 0, 0, 0.3);
+    table-layout: fixed;
 }
 
 .contato-table td {
-    padding: 15px;
+    padding: 12px;
     vertical-align: top;
     border-bottom: 1px solid rgba(179, 0, 0, 0.3);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Container para as seções lado a lado */
 .contato-horario-pagamento {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: space-between;
-    padding: 20px 15px;
+    padding: 15px 10px;
     border-bottom: 1px solid rgba(179, 0, 0, 0.3);
+    min-width: 450px;
 }
 
 .contato-horario-pagamento .contato-secao {
     flex: 1;
     text-align: center;
-    min-width: 0; /* Permite que o flex shrink funcione corretamente */
+    min-width: 200px;
 }
 
 .contato-icon {
@@ -408,16 +418,28 @@ textarea {
   
   .contato-info {
     padding: 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .contato-table {
+    min-width: 450px;
   }
   
   .contato-table td {
-    padding: 12px;
+    padding: 10px 8px;
+    font-size: 0.9rem;
   }
   
   .contato-horario-pagamento {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px 8px;
+    min-width: 400px;
+  }
+  
+  .contato-horario-pagamento .contato-secao {
+    min-width: 180px;
   }
   
   .payment-methods {
@@ -463,11 +485,17 @@ textarea {
   
   .contato-info {
     padding: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .contato-table {
+    min-width: 380px;
   }
   
   .contato-table td {
-    padding: 8px;
-    font-size: 0.9rem;
+    padding: 8px 6px;
+    font-size: 0.85rem;
   }
   
   .contato-icon {
@@ -484,8 +512,14 @@ textarea {
   }
   
   .contato-horario-pagamento {
-    padding: 12px;
-    gap: 12px;
+    padding: 10px 6px;
+    gap: 10px;
+    min-width: 350px;
+    flex-direction: row;
+  }
+  
+  .contato-horario-pagamento .contato-secao {
+    min-width: 160px;
   }
   
   .payment-methods {

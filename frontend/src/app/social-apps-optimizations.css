@@ -380,6 +380,50 @@
     justify-content: center !important;
     word-wrap: break-word !important;
   }
+  
+  /* Otimizações para tabela de contato no Facebook */
+  .contato-info {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 10px 5px !important;
+  }
+  
+  .contato-table {
+    min-width: 360px !important;
+    table-layout: fixed !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+  }
+  
+  .contato-table td {
+    padding: 8px 5px !important;
+    font-size: 0.8rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .contato-horario-pagamento {
+    min-width: 320px !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    padding: 8px 4px !important;
+  }
+  
+  .contato-horario-pagamento .contato-secao {
+    min-width: 150px !important;
+    flex: 1 !important;
+  }
+  
+  .payment-methods {
+    gap: 4px !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .payment-method {
+    font-size: 0.7rem !important;
+    padding: 4px 6px !important;
+    white-space: nowrap !important;
+  }
 }
 
 /* Instagram WebView */
