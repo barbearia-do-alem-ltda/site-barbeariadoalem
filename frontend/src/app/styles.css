@@ -2,6 +2,9 @@
 /* Importa fonte temática de Halloween para elementos especiais */
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
+/* Importa otimizações para navegadores de apps sociais */
+@import './social-apps-optimizations.css';
+
 /* ==============================
    ESTILOS GLOBAIS DA APLICAÇÃO
    ============================== */
@@ -160,161 +163,305 @@ main {
 
 
 /* ==============================
-   MEDIA QUERIES - RESPONSIVIDADE GLOBAL
+   MEDIA QUERIES - RESPONSIVIDADE GLOBAL OTIMIZADA
    ============================== */
 
 /* Tablets e telas médias (768px e abaixo) */
 @media (max-width: 768px) {
-    /* Header responsivo */
-    .header-barbearia {
-        padding: 16px 0 8px 0;
+    /* Ajustes gerais */
+    body {
+        font-size: 16px; /* Tamanho base para mobile */
     }
     
-    .header-container {
-        flex-direction: column;
-        gap: 16px;
-        padding: 0 15px;
-    }
-    
-    /* Menu responsivo */
-    .menu-barbearia {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .menu-barbearia li a {
-        font-size: 1.1rem;
-    }
-    
-    /* Fantasmas menores */
-    .ghost-svg {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .ghost-left, .ghost-right {
-        position: static;
-        margin: 0 10px;
-    }
-    
-    /* Main com margem ajustada */
+    /* Main com ajustes */
     main {
-        margin-top: 140px;
-        padding: 20px 15px;
+        padding: 20px 15px 80px 15px;
     }
     
-    /* Footer responsivo */
-    .footer-barbearia {
-        padding: 15px 10px;
-        font-size: 0.9rem;
-    }
-}
-
-/* Smartphones (480px e abaixo) */
-@media (max-width: 480px) {
-    /* Header ainda mais compacto */
-    .header-barbearia {
-        padding: 12px 0 6px 0;
-    }
-    
-    .header-container {
-        padding: 0 10px;
-        gap: 12px;
-    }
-    
-    /* Menu mobile */
-    .menu-barbearia {
-        gap: 15px;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .menu-barbearia li {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .menu-barbearia li a {
-        font-size: 1rem;
-        padding: 8px 0;
-        display: block;
-        width: 100%;
-    }
-    
-    /* Fantasmas ocultos em telas muito pequenas */
-    .ghost-icon {
-        display: none;
-    }
-    
-    /* Main mobile */
-    main {
-        margin-top: 180px;
-        padding: 15px 10px;
-    }
-    
-    /* Footer mobile */
-    .footer-barbearia {
-        padding: 12px 8px;
-        font-size: 0.85rem;
-    }
-    
-    .footer-barbearia p {
-        line-height: 1.4;
-        margin: 0;
-    }
-}
-
-/* Telas muito pequenas (320px e abaixo) */
-@media (max-width: 320px) {
-    .header-container {
-        padding: 0 5px;
-    }
-    
-    .menu-barbearia li a {
-        font-size: 0.9rem;
-    }
-    
-    main {
-        padding: 10px 5px;
-        margin-top: 200px;
-    }
-    
-    .footer-barbearia {
-        font-size: 0.8rem;
-        padding: 10px 5px;
-    }
-}
-
-/* Correções gerais para elementos responsivos */
-@media (max-width: 768px) {
     /* Tabelas responsivas */
     table {
         font-size: 0.9rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
     }
     
     th, td {
         padding: 8px 6px !important;
-    }
-    
-    /* Imagens responsivas */
-    img {
-        max-width: 100%;
-        height: auto;
+        min-width: 80px;
     }
     
     /* Containers responsivos */
     .container {
         max-width: 100%;
         padding: 0 15px;
+        margin: 0 auto;
     }
     
     /* Botões responsivos */
     button, .btn-agendar {
-        width: 100%;
-        margin: 5px 0;
+        min-height: 44px; /* Tamanho mínimo para touch */
         padding: 12px 16px;
         font-size: 1rem;
+        border-radius: 8px;
     }
+    
+    /* Formulários responsivos */
+    input, select, textarea {
+        min-height: 44px;
+        font-size: 16px; /* Previne zoom no iOS */
+        padding: 12px 15px;
+    }
+    
+    /* Títulos responsivos */
+    h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 0.8rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 0.6rem;
+    }
+}
+
+/* Smartphones (480px e abaixo) */
+@media (max-width: 480px) {
+    /* Ajustes gerais */
+    body {
+        font-size: 15px;
+    }
+    
+    /* Main mobile */
+    main {
+        padding: 15px 10px 70px 10px;
+    }
+    
+    /* Tabelas mobile */
+    table {
+        font-size: 0.85rem;
+    }
+    
+    th, td {
+        padding: 6px 4px !important;
+        font-size: 0.8rem;
+    }
+    
+    /* Containers mobile */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Botões mobile */
+    button, .btn-agendar {
+        width: 100%;
+        margin: 8px 0;
+        padding: 14px 16px;
+        font-size: 1rem;
+        min-height: 48px;
+    }
+    
+    /* Formulários mobile */
+    input, select, textarea {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+        padding: 14px 15px;
+        border-radius: 8px;
+    }
+    
+    /* Títulos mobile */
+    h1 {
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Texto responsivo */
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Telas muito pequenas (320px e abaixo) */
+@media (max-width: 320px) {
+    /* Ajustes gerais */
+    body {
+        font-size: 14px;
+    }
+    
+    main {
+        padding: 12px 8px 60px 8px;
+    }
+    
+    /* Containers muito pequenos */
+    .container {
+        padding: 0 8px;
+    }
+    
+    /* Botões muito pequenos */
+    button, .btn-agendar {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+        min-height: 44px;
+    }
+    
+    /* Formulários muito pequenos */
+    input, select, textarea {
+        padding: 12px 12px;
+        font-size: 16px;
+        min-height: 44px;
+    }
+    
+    /* Títulos muito pequenos */
+    h1 {
+        font-size: 1.7rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Tabelas muito pequenas */
+    table {
+        font-size: 0.8rem;
+    }
+    
+    th, td {
+        padding: 4px 2px !important;
+        font-size: 0.75rem;
+    }
+}
+
+/* ==============================
+   OTIMIZAÇÕES PARA NAVEGADORES DE APPS SOCIAIS
+   ============================== */
+
+/* Facebook, Instagram, WhatsApp, etc. */
+@media (max-width: 414px) and (max-height: 896px) {
+    /* Ajustes específicos para webviews de apps */
+    body {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Previne zoom indesejado */
+    input, select, textarea {
+        font-size: 16px !important;
+        transform: scale(1);
+    }
+    
+    /* Melhora a área de toque */
+    button, a, .btn-agendar {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Otimizações de scroll */
+    main {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+    }
+}
+
+/* Correções para orientação landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+    main {
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+    
+    /* Títulos menores em landscape */
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Correções para viewport pequeno em altura */
+@media (max-height: 600px) {
+    main {
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+    
+    .container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+/* ==============================
+   UTILIDADES RESPONSIVAS GLOBAIS
+   ============================== */
+
+/* Classes utilitárias para responsividade */
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-center {
+        text-align: center;
+    }
+    
+    .mobile-full-width {
+        width: 100% !important;
+    }
+}
+
+/* Correções de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Modo escuro do sistema */
+@media (prefers-color-scheme: dark) {
+    /* Já estamos usando tema escuro, mas podemos ajustar se necessário */
 }

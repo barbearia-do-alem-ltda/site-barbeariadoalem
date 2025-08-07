@@ -16,10 +16,26 @@ import { LoginComponent } from './component/login/login.component';
 })
 export class AppComponent {
   title = 'barbearia-do-alem';
+  mobileMenuOpen = false;
   
   constructor(private loginModalService: LoginModalService) {}
   
   openAdminLogin(): void {
     this.loginModalService.openModal();
+  }
+  
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+    // Previne scroll do body quando menu está aberto
+    if (this.mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }
+  
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+    document.body.style.overflow = 'auto';
   }
 }

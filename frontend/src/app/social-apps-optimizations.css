@@ -1,0 +1,283 @@
+/* ==============================
+   OTIMIZAÇÕES ESPECÍFICAS PARA NAVEGADORES DE APPS SOCIAIS
+   Facebook, Instagram, WhatsApp, TikTok, etc.
+   ============================== */
+
+/* Prevenção de zoom automático em inputs */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+/* Otimizações para WebView do Facebook */
+@media screen and (max-width: 414px) {
+  body {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Melhora a área de toque */
+  button,
+  a,
+  .btn-agendar,
+  .mobile-menu-toggle {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Otimiza scroll em WebViews */
+  main,
+  .nav-menu,
+  .agendamento-form {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+}
+
+/* Correções específicas para Instagram WebView */
+@media screen and (max-width: 375px) and (max-height: 812px) {
+  .header-barbearia {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+  
+  main {
+    margin-top: 60px;
+    padding-bottom: 70px;
+  }
+  
+  .footer-barbearia {
+    position: fixed;
+    bottom: 0;
+    z-index: 9998;
+  }
+}
+
+/* Otimizações para WhatsApp Web */
+@media screen and (max-width: 360px) {
+  /* Previne problemas de layout em telas pequenas */
+  .container,
+  .agendamento-container,
+  .home-container {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  /* Tabelas responsivas para WhatsApp */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  th, td {
+    min-width: 80px;
+    padding: 6px 4px !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Correções para modo landscape em apps */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .header-barbearia {
+    padding: 5px 0;
+  }
+  
+  .header-container {
+    padding: 5px 15px;
+  }
+  
+  .site-title {
+    font-size: 1rem;
+  }
+  
+  main {
+    margin-top: 45px;
+    padding-bottom: 50px;
+  }
+  
+  .nav-menu {
+    top: 45px;
+    height: calc(100vh - 45px);
+  }
+  
+  .menu-barbearia li a {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Otimizações para TikTok WebView */
+@media screen and (max-width: 390px) and (max-height: 844px) {
+  /* Ajustes específicos para iPhone 12/13/14 em TikTok */
+  .header-barbearia {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  
+  main {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0));
+  }
+  
+  .footer-barbearia {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
+
+/* Prevenção de problemas de viewport em apps */
+@supports (height: 100dvh) {
+  @media screen and (max-width: 768px) {
+    .nav-menu {
+      height: calc(100dvh - 60px);
+    }
+  }
+}
+
+/* Otimizações de performance para WebViews */
+@media screen and (max-width: 768px) {
+  /* Reduz animações pesadas em WebViews */
+  .ghost-icon,
+  .fantasma-esquerda-home,
+  .fantasma-direita-home {
+    animation-duration: 2s;
+    will-change: transform;
+  }
+  
+  /* Otimiza transições */
+  .menu-barbearia li a,
+  .servico-card,
+  .galeria-img {
+    transition-duration: 0.2s;
+    will-change: transform;
+  }
+  
+  /* Melhora rendering de imagens */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Correções para modo escuro forçado em alguns apps */
+@media (prefers-color-scheme: dark) {
+  /* Força nosso tema escuro mesmo se o app tentar sobrescrever */
+  body {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%) !important;
+    color: #eee !important;
+  }
+  
+  .header-barbearia,
+  .footer-barbearia {
+    background: #222 !important;
+    color: #fff !important;
+  }
+}
+
+/* Otimizações para acessibilidade em apps */
+@media (prefers-reduced-motion: reduce) {
+  .ghost-icon,
+  .fantasma-esquerda-home,
+  .fantasma-direita-home {
+    animation: none;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Correções para zoom em formulários */
+@media screen and (max-width: 768px) {
+  input:focus,
+  select:focus,
+  textarea:focus {
+    /* Previne zoom automático mantendo acessibilidade */
+    font-size: 16px;
+    transform: scale(1);
+    zoom: 1;
+  }
+}
+
+/* Otimizações específicas para cada app */
+
+/* Facebook WebView */
+.fb-webview body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fb-webview input,
+.fb-webview textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Instagram WebView */
+.ig-webview .header-barbearia {
+  position: fixed;
+  top: 0;
+}
+
+.ig-webview main {
+  margin-top: 65px;
+}
+
+/* WhatsApp WebView */
+.wa-webview table {
+  font-size: 0.8rem;
+}
+
+.wa-webview th,
+.wa-webview td {
+  padding: 4px 2px !important;
+}
+
+/* Correções finais para compatibilidade */
+@media screen and (max-width: 480px) {
+  /* Garante que elementos não quebrem o layout */
+  * {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Melhora legibilidade em telas pequenas */
+  body {
+    line-height: 1.5;
+  }
+  
+  /* Otimiza botões para touch */
+  button,
+  .btn-agendar,
+  .mobile-menu-toggle {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+}
