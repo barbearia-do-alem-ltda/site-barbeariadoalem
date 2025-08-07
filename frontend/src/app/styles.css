@@ -184,6 +184,18 @@ main {
         overflow-x: auto;
         display: block;
         white-space: nowrap;
+        min-width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Wrappers de tabela */
+    .dashboard-cortes,
+    .depoimentos-agendamento-tabela-wrapper,
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        padding: 0 5px;
     }
     
     th, td {
@@ -196,6 +208,26 @@ main {
         max-width: 100%;
         padding: 0 15px;
         margin: 0 auto;
+        overflow-x: hidden;
+    }
+    
+    /* Containers de componentes */
+    .home-container,
+    .agendamento-container,
+    .quem-somos-container,
+    .gallery-container {
+        max-width: 100%;
+        overflow-x: hidden;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Seções específicas */
+    .home-cortes-alem,
+    .home-depoimentos,
+    .home-servicos {
+        overflow-x: hidden;
+        width: 100%;
     }
     
     /* Botões responsivos */
