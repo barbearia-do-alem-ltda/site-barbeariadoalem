@@ -345,13 +345,21 @@
   }
   
   .tabela-cortes td:nth-child(1) {
+    width: 20% !important;
     text-align: left !important;
     font-weight: 600 !important;
   }
   
   .tabela-cortes td:nth-child(2) {
+    width: 12% !important;
     text-align: center !important;
     font-weight: 600 !important;
+  }
+  
+  .tabela-cortes td:nth-child(3) {
+    width: 68% !important;
+    text-align: left !important;
+    font-weight: normal !important;
   }
   
   .tabela-cortes td {
@@ -366,17 +374,7 @@
     line-height: 1.0 !important;
   }
   
-  .tabela-cortes td:nth-child(3) {
-    text-align: left !important;
-    line-height: 1.1 !important;
-    font-size: 0.65rem !important;
-  }
-  
-  .tabela-cortes td:nth-child(3) {
-    font-size: 0.7rem !important;
-    line-height: 1.4 !important;
-    padding: 6px 4px !important;
-  }
+
   
   .dashboard-cortes {
     width: 100% !important;
@@ -521,7 +519,8 @@
   .contato-value {
     font-size: 0.75rem !important;
     color: #eee !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
   }
   
   .contato-table th {
