@@ -166,6 +166,30 @@ main {
    MEDIA QUERIES - RESPONSIVIDADE GLOBAL OTIMIZADA
    ============================== */
 
+/* Desktop e telas grandes (acima de 1024px) */
+@media (min-width: 1025px) {
+    /* Otimizações para desktop */
+    .dashboard-cortes,
+    .depoimentos-agendamento-tabela-wrapper,
+    .contato-info {
+        overflow-x: visible;
+        padding: 0 20px;
+    }
+    
+    .tabela-cortes,
+    .tabela-depoimentos-agendamento,
+    .contato-table {
+        width: 100%;
+        max-width: none;
+        min-width: auto;
+    }
+    
+    .menu-barbearia {
+        padding-left: 0;
+        justify-content: center;
+    }
+}
+
 /* Tablets e telas médias (768px e abaixo) */
 @media (max-width: 768px) {
     /* Ajustes gerais */
@@ -265,6 +289,37 @@ main {
     }
 }
 
+/* Tablets grandes e laptops pequenos (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dashboard-cortes,
+    .depoimentos-agendamento-tabela-wrapper,
+    .contato-info {
+        padding: 0 15px;
+        overflow-x: auto;
+    }
+    
+    .tabela-cortes,
+    .tabela-depoimentos-agendamento,
+    .contato-table {
+        min-width: 600px;
+        width: 100%;
+    }
+    
+    .menu-barbearia {
+        padding-left: 40px;
+    }
+    
+    .contato-horario-pagamento {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .contato-horario-pagamento .contato-secao {
+        flex: 1;
+        min-width: 250px;
+    }
+}
+
 /* Smartphones (480px e abaixo) */
 @media (max-width: 480px) {
     /* Ajustes gerais */
@@ -324,6 +379,50 @@ main {
     h3 {
         font-size: 1.3rem;
         margin-bottom: 0.5rem;
+    }
+}
+
+/* Telas muito grandes (acima de 1440px) */
+@media (min-width: 1441px) {
+    .dashboard-cortes,
+    .depoimentos-agendamento-tabela-wrapper,
+    .contato-info {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .header-container {
+        max-width: 1400px;
+    }
+    
+    .menu-barbearia {
+        gap: 30px;
+    }
+}
+
+/* Dispositivos muito pequenos (abaixo de 320px) */
+@media (max-width: 319px) {
+    .dashboard-cortes,
+    .depoimentos-agendamento-tabela-wrapper,
+    .contato-info {
+        padding: 0 1px;
+    }
+    
+    .tabela-cortes,
+    .tabela-depoimentos-agendamento,
+    .contato-table {
+        min-width: 300px;
+        font-size: 0.7rem;
+    }
+    
+    .menu-barbearia {
+        padding-left: 50px;
+        gap: 15px;
+    }
+    
+    .menu-barbearia li a {
+        font-size: 0.9rem;
     }
     
     /* Texto responsivo */
@@ -423,20 +522,46 @@ main {
     }
 }
 
-/* Correções para orientação landscape */
-@media (max-width: 768px) and (orientation: landscape) {
+/* Correções para orientação landscape em todos os dispositivos */
+@media (orientation: landscape) {
+    .header-barbearia {
+        padding: 8px 0 4px 0;
+    }
+    
     main {
+        margin-top: 80px;
         padding-top: 10px;
         padding-bottom: 50px;
     }
     
-    /* Títulos menores em landscape */
+    .dashboard-cortes,
+    .depoimentos-agendamento-tabela-wrapper,
+    .contato-info {
+        margin: 10px auto 20px auto;
+    }
+    
+    .menu-barbearia {
+        gap: 15px;
+    }
+    
+    .menu-barbearia li a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Títulos menores em landscape mobile */
     h1 {
         font-size: 1.8rem;
     }
     
     h2 {
         font-size: 1.5rem;
+    }
+    
+    .tabela-cortes,
+    .tabela-depoimentos-agendamento {
+        min-width: 500px;
     }
 }
 
