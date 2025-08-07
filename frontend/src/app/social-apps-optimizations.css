@@ -235,6 +235,47 @@
   user-select: text;
 }
 
+/* Otimizações específicas para tabelas no Facebook */
+@media screen and (max-width: 414px) {
+  .tabela-cortes {
+    min-width: 380px !important;
+    table-layout: fixed !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+  }
+  
+  .tabela-cortes th:nth-child(1) {
+    width: 26% !important;
+  }
+  
+  .tabela-cortes th:nth-child(2) {
+    width: 16% !important;
+  }
+  
+  .tabela-cortes th:nth-child(3) {
+    width: 58% !important;
+  }
+  
+  .tabela-cortes td {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  .tabela-cortes td:nth-child(3) {
+    font-size: 0.7rem !important;
+    line-height: 1.4 !important;
+    padding: 6px 4px !important;
+  }
+  
+  .dashboard-cortes {
+    padding: 0 2px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
 /* Instagram WebView */
 .ig-webview .header-barbearia {
   position: fixed;

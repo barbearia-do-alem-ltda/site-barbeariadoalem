@@ -217,53 +217,69 @@
     border-color: #b30000;
 }
 
-/* Dashboard e Tabela de Preços - Estilo Excel temático */
+/* Dashboard e Tabela de Preços - Otimizada para Facebook */
 .dashboard-cortes {
-    display: flex;
-    justify-content: center;
+    display: block;
     margin: 24px 0 48px 0;
-    padding: 0 10px;
-    overflow-x: auto; /* Scroll horizontal em mobile */
+    padding: 0 5px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .tabela-cortes {
     width: 100%;
-    max-width: 900px;
-    min-width: 300px; /* Largura mínima */
-    border-collapse: collapse;
+    min-width: 600px;
+    border-collapse: separate;
+    border-spacing: 0;
     background: #181818;
     color: #eee;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     margin: 0 auto;
     font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    overflow: hidden;
     border: 2px solid #d4af37;
+    table-layout: fixed;
 }
 
 .tabela-cortes th, .tabela-cortes td {
-    padding: 16px 20px;
+    padding: 12px 8px;
     border: 1px solid #333;
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.9rem;
     vertical-align: top;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .tabela-cortes th {
     background: linear-gradient(90deg, #d4af37 0%, #b30000 100%);
     color: #181818;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: none;
     border-color: #d4af37;
+    white-space: nowrap;
+}
+
+.tabela-cortes th:nth-child(1) {
+    width: 25%;
+}
+
+.tabela-cortes th:nth-child(2) {
+    width: 15%;
+}
+
+.tabela-cortes th:nth-child(3) {
+    width: 60%;
 }
 
 .tabela-cortes td {
     background: #222;
     color: #eee;
-    font-size: 0.95rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    white-space: normal;
 }
 
 .tabela-cortes tr:nth-child(even) td {
@@ -274,19 +290,26 @@
     background: #333;
     color: #d4af37;
     transition: background 0.3s, color 0.3s;
-    transform: scale(1.01);
+}
+
+.tabela-cortes td:nth-child(1) {
+    font-weight: 600;
+    color: #fff;
 }
 
 .tabela-cortes td:nth-child(2) {
     color: #d4af37;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     text-align: center;
+    white-space: nowrap;
 }
 
 .tabela-cortes td:nth-child(3) {
     font-style: italic;
     color: #ccc;
+    line-height: 1.6;
+    padding: 12px 10px;
 }
 
 /* Seção de Depoimentos & Agendamento - Tabela estilo Excel */
@@ -767,12 +790,31 @@
     }
     
     .tabela-cortes {
-        min-width: 500px;
+        min-width: 550px;
+        table-layout: fixed;
     }
     
     .tabela-cortes th, .tabela-cortes td {
-        padding: 10px 6px;
-        font-size: 0.85rem;
+        padding: 8px 5px;
+        font-size: 0.8rem;
+        word-wrap: break-word;
+    }
+    
+    .tabela-cortes th:nth-child(1) {
+        width: 30%;
+    }
+    
+    .tabela-cortes th:nth-child(2) {
+        width: 20%;
+    }
+    
+    .tabela-cortes th:nth-child(3) {
+        width: 50%;
+    }
+    
+    .tabela-cortes td:nth-child(3) {
+        padding: 8px 6px;
+        line-height: 1.4;
     }
     
     .tabela-depoimentos-agendamento {
@@ -922,14 +964,35 @@
     }
     
     .tabela-cortes {
-        min-width: 320px;
+        min-width: 400px;
         border-radius: 8px;
+        table-layout: fixed;
     }
     
     .tabela-cortes th, .tabela-cortes td {
-        padding: 8px 4px;
-        font-size: 0.8rem;
+        padding: 6px 3px;
+        font-size: 0.75rem;
         line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .tabela-cortes th:nth-child(1) {
+        width: 28%;
+    }
+    
+    .tabela-cortes th:nth-child(2) {
+        width: 18%;
+    }
+    
+    .tabela-cortes th:nth-child(3) {
+        width: 54%;
+    }
+    
+    .tabela-cortes td:nth-child(3) {
+        padding: 6px 4px;
+        line-height: 1.4;
+        font-size: 0.7rem;
     }
     
     .tabela-depoimentos-agendamento {
