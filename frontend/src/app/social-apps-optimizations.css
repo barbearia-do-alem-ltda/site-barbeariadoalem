@@ -319,15 +319,15 @@
   }
   
   .tabela-cortes th:nth-child(1) {
-    width: 25% !important;
+    width: 20% !important;
   }
   
   .tabela-cortes th:nth-child(2) {
-    width: 15% !important;
+    width: 12% !important;
   }
   
   .tabela-cortes th:nth-child(3) {
-    width: 60% !important;
+    width: 68% !important;
   }
   
   .tabela-cortes td {
