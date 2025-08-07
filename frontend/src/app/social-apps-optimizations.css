@@ -274,7 +274,7 @@
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     gap: 6px !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     align-items: flex-start !important;
     padding: 20px 5px !important;
     overflow-x: auto !important;
@@ -296,7 +296,6 @@
   .servico-img {
     width: 75px !important;
     height: 75px !important;
-    pointer-events: none !important;
   }
   
   .servico-card h3 {
@@ -305,7 +304,6 @@
     line-height: 1.0 !important;
     margin-top: 4px !important;
     text-align: center !important;
-    pointer-events: none !important;
   }
   
   /* Melhora rendering de imagens */
