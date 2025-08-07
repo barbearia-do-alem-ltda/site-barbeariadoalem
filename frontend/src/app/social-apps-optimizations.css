@@ -521,6 +521,7 @@
   .contato-value {
     font-size: 0.75rem !important;
     color: #eee !important;
+    white-space: nowrap !important;
   }
   
   .contato-table th {
