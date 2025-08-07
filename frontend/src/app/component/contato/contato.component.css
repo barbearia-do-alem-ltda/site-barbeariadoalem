@@ -28,7 +28,8 @@
 
 .home-contato {
   position: relative;
-  padding: 140px 0 20px 0; /* ✅ Aumentado padding-top para compensar título fixo (100px header + 40px título aproximadamente) */
+  padding: 40px 20px 20px 20px;
+  margin-top: 0;
 }
 
 .home-contato::after {
@@ -60,24 +61,19 @@
 /* CONTATO - Título estiloso único */
 .contato-titulo-estiloso {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  color: #ff0000;
-  font-size: 2.5rem;
-  margin: 0;
-  letter-spacing: 0.8px;
-  background: #181818;
-  padding: 8px 0 6px 0;
-  border-radius: 0;
-  border: 1px solid rgba(255, 0, 0, 0.7);
-  border-top: none;
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  overflow: hidden;
-  text-shadow: none;
-  box-shadow: none;
+  font-family: 'Creepster', cursive;
+  color: #d4af37;
+  font-size: 2.8rem;
+  margin: 20px 0 30px 0;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 15px #222, 0 1px 12px #b30000;
+  position: relative;
+  background: transparent;
+  padding: 0;
+  border: none;
+  width: auto;
+  z-index: auto;
+  overflow: visible;
 }
 
 .contato-titulo-estiloso::before {
@@ -379,7 +375,192 @@ textarea {
   100% { }
 }
 
-/* ============================
-   ATUALIZAÇÃO: Título "Contato do Além" mais sutil aplicado
-   Data: 21/07/2025 - Fonte simples, cor dourada suave, sem brilho
-   ============================= */
+/* ==============================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ============================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .home-contato {
+    padding: 30px 15px 20px 15px;
+  }
+  
+  .contato-titulo-estiloso {
+    font-size: 2.4rem;
+    margin: 15px 0 25px 0;
+    padding: 0 10px;
+  }
+  
+  .contato-imagens {
+    gap: 20px;
+    margin: 25px 0 20px 0;
+  }
+  
+  .contato-img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .contato-card {
+    margin: 25px 10px;
+    border-radius: 12px;
+  }
+  
+  .contato-info {
+    padding: 15px;
+  }
+  
+  .contato-table td {
+    padding: 12px;
+  }
+  
+  .contato-horario-pagamento {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .payment-methods {
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .payment-method {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  .home-contato {
+    padding: 25px 10px 15px 10px;
+  }
+  
+  .contato-titulo-estiloso {
+    font-size: 2.1rem;
+    margin: 12px 0 20px 0;
+    padding: 0 8px;
+    line-height: 1.2;
+  }
+  
+  .contato-imagens {
+    gap: 15px;
+    margin: 20px 0 18px 0;
+    flex-wrap: wrap;
+  }
+  
+  .contato-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 12px;
+  }
+  
+  .contato-card {
+    margin: 20px 5px;
+    border-radius: 10px;
+  }
+  
+  .contato-info {
+    padding: 12px;
+  }
+  
+  .contato-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .contato-icon {
+    font-size: 1.3rem;
+    width: 25px;
+  }
+  
+  .contato-label {
+    font-size: 0.9rem;
+  }
+  
+  .contato-value {
+    font-size: 1rem;
+  }
+  
+  .contato-horario-pagamento {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .payment-methods {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .payment-method {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+  
+  .payment-method i {
+    font-size: 1rem;
+    margin-right: 6px;
+  }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 320px) {
+  .home-contato {
+    padding: 20px 8px 12px 8px;
+  }
+  
+  .contato-titulo-estiloso {
+    font-size: 1.8rem;
+    margin: 10px 0 15px 0;
+    padding: 0 5px;
+  }
+  
+  .contato-imagens {
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .contato-img {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+  }
+  
+  .contato-card {
+    margin: 15px 2px;
+  }
+  
+  .contato-info {
+    padding: 10px;
+  }
+  
+  .contato-table td {
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+  
+  .contato-icon {
+    font-size: 1.2rem;
+    width: 22px;
+  }
+  
+  .contato-label {
+    font-size: 0.85rem;
+  }
+  
+  .contato-value {
+    font-size: 0.9rem;
+  }
+  
+  .payment-method {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+  
+  .payment-method i {
+    font-size: 0.9rem;
+    margin-right: 4px;
+  }
+}
