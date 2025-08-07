@@ -34,7 +34,7 @@ body {
     flex-direction: column; /* Empilha elementos verticalmente */
     align-items: center; /* Centraliza horizontalmente */
     background: #222; /* Fundo escuro sólido */
-    padding: 24px 0 12px 0; /* Espaçamento interno assimétrico */
+    padding: 16px 0 8px 0; /* Espaçamento interno assimétrico */
     box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra sutil para profundidade */
     position: fixed; /* Fixo no topo da tela */
     top: 0; /* Posicionado no topo */
@@ -62,12 +62,12 @@ body {
 
 /* Fantasma da esquerda - Posicionamento fixo */
 .ghost-left {
-    left: 20px; /* 20px da borda esquerda */
+    left: 0px; /* Mais próximo da borda */
 }
 
 /* Fantasma da direita - Posicionamento e delay de animação */
 .ghost-right {
-    right: 20px; /* 20px da borda direita */
+    right: 52px; /* 20px da borda direita */
     animation-delay: 1.5s; /* Delay para criar movimento dessincronizado */
 }
 
@@ -100,15 +100,15 @@ body {
 
 /* Navegação Principal - Menu de páginas da barbearia */
 nav {
-    margin-top: 12px; /* Espaço entre header e menu */
+    margin-top: 8px; /* Espaço entre header e menu */
 }
 
 /* Lista do menu - Layout horizontal com fantasmas */
 .menu-barbearia {
     display: flex; /* Itens em linha horizontal */
-    gap: 32px; /* Espaçamento entre links do menu */
+    gap: 20px; /* Espaçamento entre links do menu */
     list-style: none; /* Remove marcadores da lista */
-    padding: 0;
+    padding: 0 0 0 75px; /* Padding-left para afastar do fantasma */
     margin: 0;
     flex-wrap: wrap; /* Permite quebra de linha */
     justify-content: center; /* Centraliza itens */
@@ -118,12 +118,12 @@ nav {
 .menu-barbearia li a {
     color: #eee; /* Texto claro */
     text-decoration: none; /* Remove sublinhado */
-    font-size: 1.2rem; /* Tamanho do texto */
+    font-size: 1.1rem; /* Tamanho do texto */
     font-weight: 500; /* Peso médio da fonte */
     transition: color 0.2s; /* Transição suave no hover */
     display: flex;
     align-items: center;
-    gap: 8px; /* Espaço para ícones (se houver) */
+    gap: 6px; /* Espaço para ícones (se houver) */
 }
 
 /* Efeito hover - Cor dourada tema barbearia */
@@ -139,7 +139,7 @@ nav {
 main {
     min-height: 300px; /* Altura mínima para garantir espaço */
     padding: 24px; /* Espaçamento interno uniforme */
-    margin-top: 120px; /* Compensa altura do header fixo */
+    margin-top: 100px; /* Compensa altura do header fixo */
     width: 100%; /* Largura total */
     box-sizing: border-box; /* Inclui padding na largura */
 }
