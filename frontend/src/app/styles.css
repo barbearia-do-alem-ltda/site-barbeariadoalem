@@ -518,7 +518,6 @@ main {
     /* Otimizações de scroll */
     main {
         -webkit-overflow-scrolling: touch;
-        overflow-scrolling: touch;
     }
 }
 

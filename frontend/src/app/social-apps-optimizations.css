@@ -19,6 +19,7 @@
   }
 }
 
+
 /* Otimizações para WebView do Facebook */
 @media screen and (max-width: 414px) {
   body {
@@ -28,6 +29,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* Otimizações específicas para touch em WebViews */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   
   /* Garante que o container principal não corte conteúdo */
@@ -45,15 +53,27 @@
     padding: 0 3px !important;
   }
   
-  /* Melhora a área de toque */
+  /* Melhora a área de toque - Padrão Apple/Google de 44px mínimo */
   button,
   a,
   .btn-agendar,
-  .mobile-menu-toggle {
-    min-height: 44px;
-    min-width: 44px;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  .mobile-menu-toggle,
+  input[type="submit"],
+  input[type="button"],
+  select,
+  .servico-card {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3) !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 1 !important;
   }
   
   /* Otimiza scroll em WebViews */
@@ -61,7 +81,6 @@
   .nav-menu,
   .agendamento-form {
     -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch;
   }
   
   /* Otimizações para modal de login admin */
@@ -298,7 +317,19 @@
     -ms-user-select: none !important;
     user-select: none !important;
     position: relative !important;
-    z-index: 1 !important;
+    z-index: 10 !important;
+    /* Melhorias específicas para WebViews */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    will-change: transform !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    /* Área de toque expandida */
+    min-height: 120px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .servico-img {
@@ -790,5 +821,131 @@
     appearance: none;
     border-radius: 8px;
     font-weight: 500;
+  }
+}
+
+/* ==============================
+   CORREÇÕES ESPECÍFICAS PARA TOUCH EM WEBVIEWS
+   ============================== */
+
+/* Força aceleração de hardware para todos os elementos interativos */
+@media screen and (max-width: 768px) {
+  button, a, input, select, textarea, .servico-card, .mobile-menu-toggle {
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-perspective: 1000 !important;
+    perspective: 1000 !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    will-change: transform !important;
+  }
+  
+  /* Melhora a detecção de touch em elementos pequenos */
+  .servico-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+  }
+  
+  /* Previne problemas de scroll durante touch */
+  .servicos-destaque {
+    -webkit-overflow-scrolling: touch !important;
+    scroll-behavior: smooth !important;
+  }
+  
+  /* Otimizações para formulários em WebViews */
+  input:focus, select:focus, textarea:focus {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    -webkit-touch-callout: default !important;
+  }
+}
+
+/* Correções específicas para Instagram WebView */
+@media screen and (max-width: 414px) and (-webkit-min-device-pixel-ratio: 2) {
+  .servico-card {
+    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.4) !important;
+  }
+  
+  button, .mobile-menu-toggle {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+/* Correções para WhatsApp WebView */
+@media screen and (max-width: 360px) {
+  /* Aumenta área de toque em telas pequenas */
+  .servico-card {
+    padding: 15px 8px 10px 8px !important;
+    margin: 5px !important;
+  }
+  
+  .mobile-menu-toggle {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 12px !important;
+  }
+}
+
+/* Otimizações para TikTok WebView */
+@media screen and (max-width: 390px) and (max-height: 844px) {
+  /* Ajustes para safe areas */
+  .header-barbearia {
+    padding-top: max(env(safe-area-inset-top, 0), 10px) !important;
+  }
+  
+  main {
+    padding-bottom: max(calc(70px + env(safe-area-inset-bottom, 0)), 80px) !important;
+  }
+  
+  .footer-barbearia {
+    padding-bottom: max(env(safe-area-inset-bottom, 0), 10px) !important;
+  }
+}
+
+/* Correções para problemas de double-tap zoom */
+@media screen and (max-width: 768px) {
+  * {
+    -ms-touch-action: manipulation !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* Exceções para elementos que precisam de scroll */
+  .nav-menu, .dashboard-cortes, .depoimentos-agendamento-tabela-wrapper {
+    -ms-touch-action: pan-y !important;
+    touch-action: pan-y !important;
+  }
+  
+  .servicos-destaque {
+    -ms-touch-action: pan-x !important;
+    touch-action: pan-x !important;
+  }
+}
+
+/* Melhorias para detecção de hover em dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+  .servico-card:hover {
+    transform: none !important;
+  }
+  
+  .servico-card:active {
+    transform: scale(0.95) !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  .menu-barbearia li a:hover {
+    transform: none !important;
+    padding-left: 20px !important;
+  }
+  
+  .menu-barbearia li a:active {
+    background: rgba(212, 175, 55, 0.2) !important;
+    padding-left: 25px !important;
+    transition: all 0.1s ease !important;
   }
 }

@@ -14,7 +14,13 @@
     </div>
     
     <!-- Botão do menu mobile -->
-    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="mobileMenuOpen">
+    <button class="mobile-menu-toggle" 
+            (click)="toggleMobileMenu()" 
+            (touchstart)="onMenuTouchStart($event)"
+            (touchend)="onMenuTouchEnd($event)"
+            [class.active]="mobileMenuOpen"
+            type="button"
+            aria-label="Menu de navegação">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
